@@ -12,13 +12,16 @@ $library = new Library;
 
 // print($Book->getBookInfo());
 
-$library->addBook($Book);
-$library->addBook($ABC);
-$library->addBook($Kniga);
+$library->addBook($book);
+$library->addBook($abc);
+$library->addBook($kniga);
 
 $library->listAllBooks();
 
-$library->findBookByAuthor('Роман');
+foreach($library->findBookByAuthor('Роман') as $value){
+  print($value->getBookInfo());
+}
+print('---------------------') .PHP_EOL;
 
 $library->removeBookByTitle('Азбука');
 $library->listAllBooks();
