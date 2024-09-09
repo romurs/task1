@@ -14,7 +14,7 @@ class Library{
 
   public function removeBookByTitle(string $title) : void {
     for ($i = 0; $i < count($this->books); $i++){
-      if($this->books[$i]->title == $title){
+      if($this->books[$i]->getTitle() == $title){
         array_splice($this->books, 1, $i);
         print('Книга удалена с полок') .PHP_EOL;
         print('---------------------') .PHP_EOL;
@@ -23,13 +23,14 @@ class Library{
     }
   }
 
-  public function findBookByAuthor(string $author) : void {
+  public function findBookByAuthor(string $author) : array {
+    $tempArray = [];
     for ($i = 0; $i < count($this->books); $i++){
-      if($this->books[$i]->author == $author){
-        print($this->books[$i]->getBookInfo());
+      if($this->books[$i]->getAuthor() == $author){
+        array_push($tempArray, $this->books[$i]);
       }
     }
-    print('---------------------') .PHP_EOL;
+    return $tempArray;
   }
 
   public function listAllBooks() {
