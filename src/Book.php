@@ -21,6 +21,22 @@ class Book
     return "{$this->title}, {$this->author}, {$this->ublishedYear}, {$this->genre}" .PHP_EOL;
   }
 
+  public function setTitle(string $title) : void{
+    $this->title = $title;
+  }
+
+  public function setAuthor(string $author) : void{
+    $this->author = $author;
+  }
+
+  public function setUblishedYear(string $ublishedYear) : void{
+    $this->ublishedYear = $ublishedYear;
+  }
+
+  public function setGenre(string $genre) : void{
+    $this->genre = $genre;
+  }
+
   public function getTitle() : string { 
     return $this->title;
   }
