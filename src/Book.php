@@ -8,7 +8,7 @@ class Book
   private string $author;
   private string $ublishedYear;
   private string $genre;
-  
+
   public function __construct(string $title, string $author, string $ublishedYear, string $genre)
   {
     $this->title = $title;
@@ -17,39 +17,48 @@ class Book
     $this->genre = $genre;
   }
 
-  public function getBookInfo() : string {
-    return "{$this->title}, {$this->author}, {$this->ublishedYear}, {$this->genre}" .PHP_EOL;
+  public function getBookInfo(): string
+  {
+    return "{$this->title}, {$this->author}, {$this->ublishedYear}, {$this->genre}" . PHP_EOL;
   }
 
-  public function setTitle(string $title) : void{
+  public function setTitle(string $title): void
+  {
     $this->title = $title;
   }
 
-  public function setAuthor(string $author) : void{
+  public function setAuthor(string $author): void
+  {
     $this->author = $author;
   }
 
-  public function setUblishedYear(string $ublishedYear) : void{
+  public function setUblishedYear(string $ublishedYear): void
+  {
     $this->ublishedYear = $ublishedYear;
   }
 
-  public function setGenre(string $genre) : void{
+  public function setGenre(string $genre): void
+  {
     $this->genre = $genre;
   }
 
-  public function getTitle() : string { 
+  public function getTitle(): string
+  {
     return $this->title;
   }
 
-  public function getAuthor() : string { 
+  public function getAuthor(): string
+  {
     return $this->author;
   }
 
-  public function getUblishedYear() : string { 
+  public function getUblishedYear(): string
+  {
     return $this->ublishedYear;
   }
 
-  public function getGenre() : string { 
+  public function getGenre(): string
+  {
     return $this->genre;
   }
 }

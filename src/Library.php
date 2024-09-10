@@ -4,39 +4,44 @@ namespace Romurs\Task1;
 
 use Romurs\Task1\Book;
 
-class Library{
+class Library
+{
 
   private array $books = [];
 
-  public function addBook(Book $book): void{
+  public function addBook(Book $book): void
+  {
     array_push($this->books, $book);
   }
 
-  public function removeBookByTitle(string $title) : void {
-    for ($i = 0; $i < count($this->books); $i++){
-      if($this->books[$i]->getTitle() == $title){
+  public function removeBookByTitle(string $title): void
+  {
+    for ($i = 0; $i < count($this->books); $i++) {
+      if ($this->books[$i]->getTitle() == $title) {
         array_splice($this->books, 1, $i);
-        print('Книга удалена с полок') .PHP_EOL;
-        print('---------------------') .PHP_EOL;
+        print ('Книга удалена с полок') . PHP_EOL;
+        print ('---------------------') . PHP_EOL;
         return;
       }
     }
   }
 
-  public function findBookByAuthor(string $author) : array {
+  public function findBookByAuthor(string $author): array
+  {
     $tempArray = [];
-    for ($i = 0; $i < count($this->books); $i++){
-      if($this->books[$i]->getAuthor() == $author){
+    for ($i = 0; $i < count($this->books); $i++) {
+      if ($this->books[$i]->getAuthor() == $author) {
         array_push($tempArray, $this->books[$i]);
       }
     }
     return $tempArray;
   }
 
-  public function listAllBooks() {
-    for ($i = 0; $i < count($this->books); $i++){
+  public function listAllBooks()
+  {
+    for ($i = 0; $i < count($this->books); $i++) {
       print($this->books[$i]->getBookInfo());
     }
-    print('---------------------') .PHP_EOL;
+    print ('---------------------') . PHP_EOL;
   }
 }

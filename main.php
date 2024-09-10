@@ -18,11 +18,10 @@ $library->addBook($kniga);
 
 $library->listAllBooks();
 
-foreach($library->findBookByAuthor('Роман') as $value){
+foreach ($library->findBookByAuthor('Роман') as $value) {
   print($value->getBookInfo());
 }
-print('---------------------') .PHP_EOL;
+print ('---------------------') . PHP_EOL;
 
 $library->removeBookByTitle('Азбука');
 $library->listAllBooks();
-
